@@ -25,8 +25,8 @@ public class KarpekarConstant
         int kaprekar = 6174;
         while (value != kaprekar) {
             int[] digits = getDigits(value);
-            int ascending = getAscendingvalueber(digits);
-            int descending = getDescendingvalueber(digits);
+            int ascending = getAscendingValue(digits);
+            int descending = getDescendingValue(digits);
             value = Math.abs(descending - ascending);
             System.out.println(String.valueOf(descending) + " - " + String.valueOf(ascending) + " = " + String.valueOf(value));
 
@@ -42,7 +42,7 @@ public class KarpekarConstant
         return digits;
     }
 
-    public static int getAscendingvalueber(int[] digits) {
+    public static int getAscendingValue(int[] digits) {
         int value = 0;
         Arrays.sort(digits);
         for (int digit : digits) {
@@ -51,7 +51,7 @@ public class KarpekarConstant
         return value;
     }
 
-    public static int getDescendingvalueber(int[] digits) {
+    public static int getDescendingValue(int[] digits) {
         int value = 0;
         for (int index= 3; index>= 0; index--) {
             value = value * 10 + digits[index];
